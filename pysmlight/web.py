@@ -373,7 +373,7 @@ class Api2(webClient):
                 params["zbChipNum"] = 5
         else:
             params = {"action": Actions.API_FLASH_ESP.value, "fwUrl": firmware.link}
-        res = await self.get(params)
+        res = await self.post(params)
         return res == "ok"
 
     async def set_toggle(self, page: Pages, toggle: str, value: bool) -> bool:
